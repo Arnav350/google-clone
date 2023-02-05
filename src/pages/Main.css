@@ -1,0 +1,58 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial;
+}
+
+.main__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+  height: 60px;
+  align-items: center;
+}
+
+.main__left,
+.main__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main__left {
+  margin: 0 5px;
+  padding: 0 5px;
+}
+
+.main__left__link {
+  padding: 5px 10px;
+  color: #202124;
+  font-size: 14px;
+}
+
+.main__right__link {
+  padding: 5px 15px 5px 0px;
+  color: #000000DE;
+  font-size: 13px;
+}
+
+.main__right__button {
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+}
+
+.main__apps {
+  padding: 4px;
+  width: 28px;
+  height: 28px;
+  color: #5f6368;
+}
+
+.main__avatar {
+  width: 32px;
+  height: 32px;
+  background-color: black;
+  border-radius: 50%;
+}
