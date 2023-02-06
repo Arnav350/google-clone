@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IoMdApps, IoMdSearch, IoMdMic, IoMdCamera } from "react-icons/io";
+import {
+  IoMdApps,
+  IoMdSearch,
+  IoMdMic,
+  IoMdCamera,
+  IoIosLeaf,
+} from "react-icons/io";
 import GoogleLogo from "../assets/GoogleLogo.png";
 import "./Main.css";
 
@@ -36,7 +42,7 @@ function Home() {
         </div>
       </div>
       <div className="body">
-        <figure className="logo">
+        <figure className="body__logo">
           <img src={GoogleLogo} alt="" />
         </figure>
         <div className="search__container">
@@ -54,11 +60,40 @@ function Home() {
           </div>
         </div>
         <div>
-          <button>Google Search</button>
-          <button>I'm Feeling Lucky</button>
+          <button className="buttons__search">Google Search</button>
+          <button className="buttons__feeling">I'm Feeling Lucky</button>
         </div>
       </div>
-      <div className="footer"></div>
+      <div className="space"></div>
+      <div className="footer">
+        <div className="footer__left">
+          <Link to="/" className="footer__link">
+            Advertising
+          </Link>
+          <Link to="/" className="footer__link">
+            Business
+          </Link>
+          <Link to="/" className="footer__link">
+            How Search works
+          </Link>
+        </div>
+        <div className="footer__middle">
+          <Link to="/" className="footer__link">
+            <IoIosLeaf /> Carbon neutral since 2007
+          </Link>
+        </div>
+        <div className="footer__right">
+          <Link to="/" className="footer__link">
+            Privacy
+          </Link>
+          <Link to="/" className="footer__link">
+            Terms
+          </Link>
+          <Link to="/" className="footer__link">
+            Settings
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

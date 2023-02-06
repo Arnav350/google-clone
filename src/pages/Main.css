@@ -1,4 +1,4 @@
-/* nav */
+/* main */
 
 .main {
   display: flex;
@@ -6,6 +6,8 @@
   height: 100vh;
   font-family: Arial;
 }
+
+/* nav */
 
 .nav {
   display: flex;
@@ -63,6 +65,13 @@
   border-radius: 50%;
 }
 
+/* space */
+
+.space {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
 /* body */
 
 .body {
@@ -72,7 +81,7 @@
   justify-content: center;
 }
 
-.logo {
+.body__logo {
   padding-top: 61.6px;
   width: 272px;
 }
@@ -105,6 +114,7 @@
 }
 
 .search__input {
+  padding: 0 0 10px 10px;
   flex: 1;
   height: 34px;
   font-size: 16px;
@@ -114,4 +124,69 @@
   padding: 0 8px;
   color: #9AA0A6;
   font-size: 24px;
+}
+
+.buttons__search,
+.buttons__feeling {
+  margin: 8px 6px;
+  padding: 0 17px;
+  height: 36px;
+  background-color: #F8F9FA;
+  color: #3C4043;
+  border-color: 1px solid #F8F9FA;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  background-color: #f2f2f2;
+}
+
+.footer__left,
+.footer__middle,
+.footer__right {
+  display: flex;
+  min-width: 30%;
+}
+
+.footer__left {
+  justify-content: flex-start;
+  order: 1;
+}
+
+.footer__middle {
+  order: 2;
+  justify-content: center;
+}
+
+.footer__right {
+  justify-content: flex-end;
+  order: 3;
+}
+
+.footer__link {
+  padding: 15px;
+  color: #70757A;
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    justify-content: space-evenly;
+  }
+
+  .footer__middle {
+    order: 0;
+    height: 48px;
+    width: 100%;
+  }
+
+
 }
