@@ -1,41 +1,64 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IoApps } from "react-icons/io5";
+import { IoMdApps, IoMdSearch, IoMdMic, IoMdCamera } from "react-icons/io";
+import GoogleLogo from "../assets/GoogleLogo.png";
 import "./Main.css";
 
 function Home() {
   return (
     <div className="main">
-      <div className="main__header">
-        <div className="main__left">
-          <Link to="about" className="main__left__link">
+      <div className="nav">
+        <div className="side">
+          <Link to="about" className="left__link">
             About
           </Link>
-          <Link to="store" className="main__left__link">
+          <Link to="store" className="left__link">
             Store
           </Link>
         </div>
-        <div className="main__right">
-          <Link to="gmail" className="main__right__link">
+        <div className="side">
+          <Link to="gmail" className="right__link">
             Gmail
           </Link>
-          <Link to="images" className="main__right__link">
+          <Link to="images" className="right__link">
             Images
           </Link>
-          <button className="main__right__button">
-            <IoApps className="main__apps" />
+          <button className="right__button">
+            <IoMdApps className="apps" />
           </button>
           {true ? (
-            <button className="main__right__button">
-              <div className="main__avatar"></div>
+            <button className="right__button">
+              <div className="avatar"></div>
             </button>
           ) : (
             <div>Sign In</div>
           )}
         </div>
       </div>
-      <div className="main__body"></div>
-      <div className="main__footer"></div>
+      <div className="body">
+        <figure className="logo">
+          <img src={GoogleLogo} alt="" />
+        </figure>
+        <div className="search__container">
+          <div className="search">
+            <button className="search__left">
+              <IoMdSearch />
+            </button>
+            <input type="text" className="search__input" />
+            <button className="search__right">
+              <IoMdMic />
+            </button>
+            <button className="search__right">
+              <IoMdCamera />
+            </button>
+          </div>
+        </div>
+        <div>
+          <button>Google Search</button>
+          <button>I'm Feeling Lucky</button>
+        </div>
+      </div>
+      <div className="footer"></div>
     </div>
   );
 }
