@@ -1,22 +1,25 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { InputContext } from "../components/InputContext";
 import {
   IoMdApps,
   IoMdSearch,
   IoMdMic,
   IoMdCamera,
-  IoIosLeaf,
+  IoMdLeaf,
 } from "react-icons/io";
 import GoogleLogo from "../assets/GoogleLogo.png";
 import "./Main.css";
 
 function Home() {
   const inputContext = useContext(InputContext);
+  const navigate = useNavigate();
 
   function search(event: any) {
     event.preventDefault();
     console.log(inputContext.input);
+
+    navigate("/search");
   }
 
   return (
@@ -95,7 +98,7 @@ function Home() {
         </div>
         <div className="footer__middle">
           <Link to="/" className="footer__link">
-            <IoIosLeaf /> Carbon neutral since 2007
+            <IoMdLeaf /> Carbon neutral since 2007
           </Link>
         </div>
         <div className="footer__right">
