@@ -21,8 +21,8 @@ function Home() {
 
   return (
     <div className="main">
-      <div className="nav">
-        <div className="side">
+      <nav className="nav">
+        <div className="nav__side">
           <Link to="about" className="left__link">
             About
           </Link>
@@ -30,31 +30,31 @@ function Home() {
             Store
           </Link>
         </div>
-        <div className="side">
+        <div className="nav__side">
           <Link to="gmail" className="right__link">
             Gmail
           </Link>
           <Link to="images" className="right__link">
             Images
           </Link>
-          <button className="right__button">
-            <IoMdApps className="apps" />
+          <button className="nav__button">
+            <IoMdApps className="nav__apps" />
           </button>
           {true ? (
-            <button className="right__button">
-              <div className="avatar"></div>
+            <button className="nav__button">
+              <div className="nav__avatar"></div>
             </button>
           ) : (
             <div>Sign In</div>
           )}
         </div>
-      </div>
+      </nav>
       <form className="body" onSubmit={search}>
         <figure className="body__logo">
           <img src={GoogleLogo} alt="" />
         </figure>
         <div className="search__container">
-          <div className="search">
+          <div className="main__search">
             <button className="search__left">
               <IoMdSearch />
             </button>

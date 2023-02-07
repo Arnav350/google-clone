@@ -1,0 +1,37 @@
+/* search */
+
+/* header */
+
+.search__top {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+.search__top__left {
+  display: flex;
+  align-items: center;
+}
+
+.search__logo {
+  display: flex;
+  width: 92px;
+}
+
+.search__search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.4px;
+  padding: 5px 8px 0 8px;
+  width: 538px;
+  height: 46px;
+  border: 1px solid #DFE1E5;
+  border-radius: 24px;
+}
+
+.search__search__icon {
+  padding: 0 8px;
+  color: #9AA0A6;
+  font-size: 24px;
+}

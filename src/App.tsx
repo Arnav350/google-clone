@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { InputProvider } from "./components/InputContext";
 import Main from "./pages/Main";
+import Search from "./pages/Search";
 import "./App.css";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Main />} />
-          {/* <Route path="/search" element={<h1>test</h1>} /> */}
+          <Route path="/Search" element={<Search />} />
         </Routes>
       </Router>
     </InputProvider>

@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.side {
+.nav__side {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,7 +42,7 @@
   line-height: 24px;
 }
 
-.right__button {
+.nav__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,14 +51,14 @@
   padding: 8px;
 }
 
-.apps {
+.nav__apps {
   padding: 4px;
   width: 32px;
   height: 32px;
   color: #5f6368;
 }
 
-.avatar {
+.nav__avatar {
   width: 32px;
   height: 32px;
   background-color: black;
@@ -94,7 +94,7 @@
   width: 100%;
 }
 
-.search {
+.main__search {
   display: flex;
   justify-content: space-between;
   align-items: center;
