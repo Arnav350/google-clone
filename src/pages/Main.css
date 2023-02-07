@@ -138,6 +138,13 @@
   font-size: 14px;
 }
 
+.buttons__search:hover,
+.buttons__feeling:hover {
+  color: #202124;
+  border: 1px solid #DADCE0;
+  box-shadow: 0 1px 1px rgb(0, 0, 0, 0.1);
+}
+
 /* footer */
 
 .footer {

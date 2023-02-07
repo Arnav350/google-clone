@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { InputContext } from "../components/InputContext";
 import {
   IoMdApps,
   IoMdSearch,
@@ -11,6 +12,13 @@ import GoogleLogo from "../assets/GoogleLogo.png";
 import "./Main.css";
 
 function Home() {
+  const inputContext = useContext(InputContext);
+
+  function search(event: any) {
+    event.preventDefault();
+    console.log(inputContext.input);
+  }
+
   return (
     <div className="main">
       <div className="nav">
@@ -41,7 +49,7 @@ function Home() {
           )}
         </div>
       </div>
-      <div className="body">
+      <form className="body" onSubmit={search}>
         <figure className="body__logo">
           <img src={GoogleLogo} alt="" />
         </figure>
@@ -50,7 +58,11 @@ function Home() {
             <button className="search__left">
               <IoMdSearch />
             </button>
-            <input type="text" className="search__input" />
+            <input
+              value={inputContext.input}
+              className="search__input"
+              onChange={(event) => inputContext.setInput(event.target.value)}
+            />
             <button className="search__right">
               <IoMdMic />
             </button>
@@ -60,10 +72,14 @@ function Home() {
           </div>
         </div>
         <div>
-          <button className="buttons__search">Google Search</button>
+          <input
+            type="submit"
+            value="Google Search"
+            className="buttons__search"
+          />
           <button className="buttons__feeling">I'm Feeling Lucky</button>
         </div>
-      </div>
+      </form>
       <div className="space"></div>
       <div className="footer">
         <div className="footer__left">
