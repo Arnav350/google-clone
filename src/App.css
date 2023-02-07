@@ -17,6 +17,10 @@ button {
   border: transparent;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 input {
   border: transparent;
   outline: transparent;

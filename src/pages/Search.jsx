@@ -66,15 +66,24 @@ function Search() {
             <button>
               <IoMdSearch /> All
             </button>
-            {/* <button>
-              <IoMdPin /> Maps
-            </button> */}
+            <button>
+              <IoMdImage /> Images
+            </button>
             <button>
               <IoMdPaper /> News
             </button>
             <button>
-              <IoMdImage /> Images
+              <IoMdPlay /> Videos
             </button>
+            <button>
+              <IoMdBookmarks /> Books
+            </button>
+            <button>
+              <IoMdMore /> More
+            </button>
+            {/* <button>
+              <IoMdPin /> Maps
+            </button> */}
             {/* <button>
               <IoMdPricetag /> Shopping
             </button> */}
@@ -86,15 +95,6 @@ function Search() {
               <IoMdTrendingUp />
               Finance
             </button> */}
-            <button>
-              <IoMdPlay /> Videos
-            </button>
-            <button>
-              <IoMdBookmarks /> Books
-            </button>
-            <button>
-              <IoMdMore /> More
-            </button>
           </div>
           <button>Tools</button>
           <button>SafeSearch on</button>

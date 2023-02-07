@@ -4,6 +4,7 @@ import { InputContext } from "../components/InputContext";
 import {
   IoMdApps,
   IoMdSearch,
+  IoMdClose,
   IoMdMic,
   IoMdCamera,
   IoMdLeaf,
@@ -66,6 +67,12 @@ function Home() {
               className="search__input"
               onChange={(event) => inputContext.setInput(event.target.value)}
             />
+            {inputContext.input ? (
+              <button className="search__close">
+                <IoMdClose onClick={() => inputContext.setInput("")} />
+              </button>
+            ) : null}
+
             <button className="search__right">
               <IoMdMic />
             </button>
