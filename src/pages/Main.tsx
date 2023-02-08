@@ -18,7 +18,6 @@ function Home() {
 
   function search(event: any) {
     event.preventDefault();
-    console.log(inputContext.input);
 
     navigate("/search");
   }
@@ -59,9 +58,7 @@ function Home() {
         </figure>
         <div className="search__container">
           <div className="main__search">
-            <button className="search__left">
-              <IoMdSearch />
-            </button>
+            <IoMdSearch className="search__left" />
             <input
               value={inputContext.input}
               className="search__input"

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { InputContext } from "../components/InputContext";
+import useSearch from "../components/useSearch";
 import {
   IoMdApps,
   IoMdSearch,
@@ -23,8 +24,9 @@ import "./Search.css";
 
 function Search() {
   const inputContext = useContext(InputContext);
+  const { data } = useSearch(inputContext.input);
 
-  console.log(inputContext.input);
+  console.log(data);
 
   return (
     <div className="search">
