@@ -13,6 +13,8 @@
   border-bottom: 1px solid #DADCE0;
 }
 
+/* top */
+
 .search__top {
   display: flex;
   justify-content: space-between;
@@ -100,6 +102,8 @@
   border-radius: 50%;
 }
 
+/* nav */
+
 .search__nav {
   display: flex;
   margin-left: calc(var(--margin-left) - 11px);
@@ -135,6 +139,8 @@
   font-size: 14px;
 }
 
+/* results */
+
 .search__results {
   margin-left: var(--margin-left);
   width: 652px;
@@ -145,6 +151,7 @@
   align-items: center;
   height: 43px;
   color: #70757A;
+  font-size: 14px;
 }
 
 .search__results__item {

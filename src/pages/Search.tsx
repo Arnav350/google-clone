@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { InputContext } from "../components/InputContext";
 import useSearch from "../components/useSearch";
+import response from "../components/response";
 import {
   IoMdApps,
   IoMdSearch,
@@ -24,10 +25,18 @@ import "./Search.css";
 
 function Search() {
   const inputContext = useContext(InputContext);
+  const [currentInput, setCurrentInput] = useState(inputContext.input);
 
-  const { data } = useSearch(inputContext.input);
+  // const data = response;
 
-  console.log(data);
+  const { data }: any = useSearch(inputContext.input);
+
+  // console.log(data);
+
+  function search(event: any) {
+    inputContext.setInput(currentInput);
+    event.preventDefault();
+  }
 
   return (
     <div className="search">
@@ -39,15 +48,15 @@ function Search() {
                 <img src={GoogleLogo} alt="" />
               </figure>
             </Link>
-            <div className="search__search">
+            <form className="search__search" onSubmit={search}>
               <input
-                value={inputContext.input}
+                value={currentInput}
                 className="search__search__input"
-                onChange={(event) => inputContext.setInput(event.target.value)}
+                onChange={(event) => setCurrentInput(event.target.value)}
               />
-              {inputContext.input ? (
+              {currentInput ? (
                 <button className="search__search__close">
-                  <IoMdClose onClick={() => inputContext.setInput("")} />
+                  <IoMdClose onClick={() => setCurrentInput("")} />
                 </button>
               ) : null}
               <div className="search__search__box">
@@ -61,7 +70,7 @@ function Search() {
                   <IoMdSearch />
                 </button>
               </div>
-            </div>
+            </form>
           </div>
           <div className="search__top__right">
             <button className="search__top__icon">
@@ -112,14 +121,14 @@ function Search() {
           <button className="search__nav__tools">Tools</button>
         </nav>
       </div>
-      {false && (
+      {inputContext.input && (
         <div className="search__results">
           <p className="search__results__info">
             About {data?.searchInformation.formattedTotalResults} results {"("}
             {data?.searchInformation.formattedSearchTime} seconds{")"}
           </p>
 
-          {data?.items.map((item, index) => (
+          {data?.items.map((item: any, index: number) => (
             <div className="search__results__item" key={index}>
               <div className="search__results__text">
                 <a href={item.link} className="search__results__link">
@@ -128,16 +137,15 @@ function Search() {
                 </a>
                 <p className="search__results__snippet">{item.snippet}</p>
               </div>
-              {item.pagemap?.cse_image?.length > 0 &&
-                item.pagemap?.cse_image[0].src && (
-                  <figure className="search__results__figure">
-                    <img
-                      src={item.pagemap?.cse_image[0]?.src}
-                      alt=""
-                      className="search__results__image"
-                    />
-                  </figure>
-                )}
+              {item.pagemap?.cse_image && item.pagemap?.cse_image[0].src && (
+                <figure className="search__results__figure">
+                  <img
+                    src={item.pagemap?.cse_image[0]?.src}
+                    alt=""
+                    className="search__results__image"
+                  />
+                </figure>
+              )}
             </div>
           ))}
         </div>
