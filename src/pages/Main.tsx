@@ -18,6 +18,7 @@ function Home() {
 
   function search(event: any) {
     event.preventDefault();
+    inputContext.setInput(event.target.value);
 
     navigate("/search");
   }
