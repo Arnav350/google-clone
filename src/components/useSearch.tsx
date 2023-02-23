@@ -4,7 +4,7 @@ import API_KEY from "./keys";
 const CONTEXT_KEY = "260498945fab543d4";
 
 function useSearch(term: string) {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any | null>(null);
 
   useEffect(() => {
     async function fetchData() {

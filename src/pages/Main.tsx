@@ -12,12 +12,17 @@ import {
 import GoogleLogo from "../assets/GoogleLogo.png";
 import "./Main.css";
 
-function Home() {
-  const inputContext = useContext(InputContext);
-  const navigate = useNavigate();
-  const [currentInput, setCurrentInput] = useState("");
+interface IInputType {
+  input: string;
+  setInput: React.Dispatch<React.SetStateAction<string>>;
+}
 
-  function search(event: any) {
+function Home() {
+  const inputContext = useContext<IInputType>(InputContext);
+  const navigate = useNavigate();
+  const [currentInput, setCurrentInput] = useState<string>("");
+
+  function search(event: React.FormEvent<HTMLFormElement>) {
     inputContext.setInput(currentInput);
     event.preventDefault();
     navigate("/search");
@@ -53,7 +58,10 @@ function Home() {
           )}
         </div>
       </nav>
-      <form className="main__body" onSubmit={search}>
+      <form
+        className="main__body"
+        onSubmit={(event: React.FormEvent<HTMLFormElement>) => search(event)}
+      >
         <figure className="main__body__logo">
           <img src={GoogleLogo} alt="" />
         </figure>
@@ -63,7 +71,9 @@ function Home() {
             <input
               value={currentInput}
               className="main__search__input"
-              onChange={(event) => setCurrentInput(event.target.value)}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                setCurrentInput(event.target.value)
+              }
             />
             {currentInput ? (
               <button className="main__search__close">

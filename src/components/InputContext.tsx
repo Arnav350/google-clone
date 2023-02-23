@@ -1,17 +1,17 @@
 import { createContext, useContext, useState } from "react";
 
-interface InputType {
+interface IInputType {
   input: string;
   setInput: React.Dispatch<React.SetStateAction<string>>;
 }
 
-interface InputContextChildren {
+interface IInputContextChildren {
   children: React.ReactNode;
 }
 
-export const InputContext = createContext<InputType>({} as InputType);
+export const InputContext = createContext<IInputType>({} as IInputType);
 
-export const InputProvider = ({ children }: InputContextChildren) => {
+export const InputProvider = ({ children }: IInputContextChildren) => {
   const [input, setInput] = useState<string>("");
 
   return (
