@@ -61,7 +61,6 @@
 .main__nav__avatar {
   width: 32px;
   height: 32px;
-  background-color: black;
   border-radius: 50%;
 }
 
@@ -107,7 +106,7 @@
   margin: 0 6px;
   color: #9AA0A6;
   font-size: 20px;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
 }
 
 .main__search__input {
@@ -142,6 +141,7 @@
   border: 1px solid #F8F9FA;
   border-radius: 4px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .main__buttons__search:hover,

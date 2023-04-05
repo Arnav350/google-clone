@@ -90,15 +90,20 @@
 
 .search__top__icon {
   display: flex;
-  font-size: 24px;
-  padding: 8px 10px;
+  margin: 0px 2px;
+  padding: 8px 8px;
   color: #5f6368;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.search__top__icon:hover {
+  background-color: rgba(60, 64, 67, .08);
 }
 
 .search__top__avatar {
   width: 32px;
   height: 32px;
-  background-color: black;
   border-radius: 50%;
 }
 

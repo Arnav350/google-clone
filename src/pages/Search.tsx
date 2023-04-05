@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { InputContext } from "../components/InputContext";
 import useSearch from "../components/useSearch";
-import response from "../components/response";
+import Logo from "../assets/Logo.png";
 import {
   IoMdApps,
   IoMdSearch,
@@ -15,10 +15,6 @@ import {
   IoMdPlay,
   IoMdBookmarks,
   IoMdMore,
-  IoMdPin,
-  IoMdPricetag,
-  IoMdAirplane,
-  IoMdStats,
 } from "react-icons/io";
 import GoogleLogo from "../assets/GoogleLogo.png";
 import "./Search.css";
@@ -32,11 +28,7 @@ function Search() {
   const inputContext = useContext<IInputType>(InputContext);
   const [currentInput, setCurrentInput] = useState<string>(inputContext.input);
 
-  // const data = response;
-
-  const { data }: any = useSearch(inputContext.input);
-
-  // console.log(data);
+  const { data } = useSearch(inputContext.input);
 
   function search(event: React.FormEvent<HTMLFormElement>) {
     inputContext.setInput(currentInput);
@@ -92,43 +84,30 @@ function Search() {
               <IoMdApps />
             </button>
             <button className="search__top__icon">
-              <div className="search__top__avatar"></div>
+              <img src={Logo} alt="" className="search__top__avatar" />
             </button>
           </div>
         </div>
         <nav className="search__nav">
           <div className="search__nav__options">
-            <Link to="/all" className="search__nav__option">
+            <div className="search__nav__option">
               <IoMdSearch className="search__nav__icon" /> All
-            </Link>
-            <Link to="/images" className="search__nav__option">
+            </div>
+            <div className="search__nav__option">
               <IoMdImage className="search__nav__icon" /> Images
-            </Link>
-            <Link to="/news" className="search__nav__option">
+            </div>
+            <div className="search__nav__option">
               <IoMdPaper className="search__nav__icon" /> News
-            </Link>
-            <Link to="/videos" className="search__nav__option">
+            </div>
+            <div className="search__nav__option">
               <IoMdPlay className="search__nav__icon" /> Videos
-            </Link>
-            <Link to="/books" className="search__nav__option">
+            </div>
+            <div className="search__nav__option">
               <IoMdBookmarks className="search__nav__icon" /> Books
-            </Link>
-            <button className="search__nav__option">
+            </div>
+            <div className="search__nav__option">
               <IoMdMore className="search__nav__icon" /> More
-            </button>
-            {/* <Link to="/maps" className="search__nav__option">
-              <IoMdPin className="search__nav__icon" /> Maps
-            </Link> */}
-            {/* <Link to="/shopping" className="search__nav__option">
-              <IoMdPricetag className="search__nav__icon" /> Shopping
-            </Link> */}
-            {/* <Link to="/flights" className="search__nav__option">
-              <IoMdAirplane className="search__nav__icon" /> Flights
-            </Link> */}
-            {/* <Link to="/finance" className="search__nav__option">
-              <IoMdStats className="search__nav__icon" />
-              Finance
-            </Link> */}
+            </div>
           </div>
           <button className="search__nav__tools">Tools</button>
         </nav>
